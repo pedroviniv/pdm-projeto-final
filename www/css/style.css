@@ -1,0 +1,29 @@
+/* Empty. Add your own CSS if you like */
+
+.bar-primary {
+	background-color: rgb(239, 88, 45);
+}
+
+.bar-primary > h2,h3,h4,h5,p {
+	color: #fff;
+}
+
+.bar-primary .title {
+	color: #fff;
+}
+
+.bar-primary .icon {
+	color: #fff;
+}
+
+.bar-primary .tabs-striped .tabs {
+	background-color: rgb(239, 88, 45) !important;
+}
+
+.bg-image {
+	background-image: url(../img/bgpage-alternative.jpg);
+}
+
+.custom-input {
+	border: none !important;
+}

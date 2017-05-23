@@ -1,0 +1,14 @@
+<ion-view class="bg-image" title="Simples & Bellas">
+	<ion-content class="padding" data-ng-init="loadFavourites()">
+		<div class="list card" >
+			<div class="item item-divider">
+			   	<small>{{favourites.length}} decorações favoritas</small>
+			</div>
+			<a class="item item-thumbnail-left" on-tap="open(p)" ng-repeat="p in favourites">
+			    <img src="{{p.path}}">
+			    <h2>{{p.title}}</h2>
+			    <p>{{p.description}}</p>
+			</a>
+		</div>
+	</ion-content>
+</ion-view>

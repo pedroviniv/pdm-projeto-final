@@ -1,0 +1,30 @@
+<ion-view class="bg-image" title="Simples & Bellas">
+	<ion-content data-ng-init="loadPostings()" class="padding">
+		<div class="list list-inset">
+		  <label class="item item-input">
+		    <i class="icon ion-search placeholder-icon"></i>
+		    <input type="text" placeholder="Busque pelo nome" 
+		    ng-model="searchArgument" ng-change="searchByName(searchArgument)">
+		  </label>
+		</div>
+		<div class="list card" ng-if="postings.length !== 0">
+			<div ng-repeat="c in categories">
+				<div class="item item-divider" ng-if="hasSome(c.reference)">
+				    {{c.category}}
+				</div>
+				<a class="item item-thumbnail-left" on-tap="open(p)" 
+				ng-repeat="p in getPostingsByCategory(c.reference)">
+				   <img src="{{p.path}}">
+				   <h2>{{p.title}}</h2>
+				   <p>{{p.description}}</p>
+				</a>
+			</div>
+		</div>
+		<div class="card" ng-if="postings.length === 0">
+		  <div class="item item-text-wrap assertive">
+		    <div ng-if="searchArgument">Não há decorações com o título "{{searchArgument}}"</div>
+		     <div ng-if="!searchArgument">Não há nenhuma decoração!</div>
+		  </div>
+		</div>
+	</ion-content>
+</ion-view>

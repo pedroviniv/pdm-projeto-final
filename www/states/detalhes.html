@@ -1,0 +1,44 @@
+<ion-view view-title="Detalhes" class="bg-image">
+
+	<ion-nav-buttons side="left"> 
+           <a on-tap="goHome()" class="button button-icon icon ion-ios-arrow-back"></a>
+    </ion-nav-buttons>
+
+	<ion-content data-ng-init="loadSelected()">
+		
+		<div class="list card">
+
+		  <div class="item item-avatar">
+		    <img src="{{selected.path}}">
+		    <h2>{{selected.title}}</h2>
+		    <p>
+		      {{selected.description}}
+		    </p>
+		  </div>
+
+		  <div class="item item-body">
+		    <img class="full-image" src="{{selected.path}}">
+		    <p>
+		      {{selected.description}}
+		    </p>
+		    <div ng-bind-html="selected.detail" style=""></div>
+		  </div>
+
+			<a ng-if="!isFavourited(selected)" class="item item-icon-left" on-tap="addFavourite(selected)">
+			    <span class="icon ion-star"></span> 
+			      Marcar como favorito
+		    </a>
+
+		    <a ng-if="isFavourited(selected)" class="item item-icon-left assertive" on-tap="removeFavourite(selected)">
+			    <i class="icon ion-star"></i> 
+			    Remover dos favoritos
+			</a>
+
+			<a class="item item-icon-left" on-tap="share(selected)">
+		      	<i class="icon ion-share"></i> 
+		      	Compartilhar
+		    </a> 
+		</div>
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,22 @@
+<ion-view view-title="Simples & Bellas">
+
+	<ion-nav-back-button hide-back-button="true">
+		
+	</ion-nav-back-button>
+
+	<ion-tabs>
+
+		<ion-tab title="Decorações" href="#/home/decoracoes">
+			<ion-nav-view name="decoracoes-tab">
+				<ng-include src="'states/tabs/decoracoes.html'"/>
+			</ion-nav-view>
+		</ion-tab>
+
+		<ion-tab title="Favoritos" href="#/home/favoritos">
+			<ion-nav-view name="favoritos-tab">
+				<ng-include src="'states/tabs/favoritos.html'"/>
+			</ion-nav-view>
+		</ion-tab>
+
+	</ion-tabs>
+</ion-view>
