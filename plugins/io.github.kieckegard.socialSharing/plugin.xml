@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="io.github.kieckegard.socialSharing"
+        version="0.7.0">
+
+  <name>SocialSharing</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/photoSharing.js" target="js/photoSharing.js"/>
+
+  <js-module src="www/photoSharing.js" name="photoSharing">
+    <clobbers target="photoSharing" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="SocialSharing">
+        <param name="android-package" value="io.github.kieckegard.plugin.SocialSharing"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/SocialSharing.java" target-dir="src/io/github/kieckegard/plugin/"/>
+  </platform>
+
+</plugin>

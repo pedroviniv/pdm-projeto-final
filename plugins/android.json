@@ -1,0 +1,33 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "br.edu.ifpb.pdm"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "br.edu.ifpb.pdm"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "br.edu.ifpb.pdm"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "br.edu.ifpb.pdm"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "br.edu.ifpb.pdm"
+        },
+        "io.github.kieckegard.socialSharing": {
+            "PACKAGE_NAME": "br.edu.ifpb.pdm"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "br.edu.ifpb.pdm"
+        }
+    },
+    "dependent_plugins": {}
+}
