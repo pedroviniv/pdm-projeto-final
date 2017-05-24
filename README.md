@@ -2,7 +2,7 @@
 
 O projeto da disciplina consiste no desenvolvimento de um aplicativo
 que consome um serviço Rest para obtenção de dados produzidos pelo
-aplicativo (Simples & Bellas)[https://play.google.com/store/apps/details?id=ag.meyrele.simplesebellas&hl=pt_BR].
+aplicativo [Simples & Bellas](https://play.google.com/store/apps/details?id=ag.meyrele.simplesebellas&hl=pt_BR).
 
 O Bellasharing possui as seguintes funcionalidades:
 - Listar 50 decorações agrupadas pela categoria
