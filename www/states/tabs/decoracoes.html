@@ -20,11 +20,14 @@
 				</a>
 			</div>
 		</div>
-		<div class="card" ng-if="postings.length === 0">
+		<div class="card" ng-if="postings.length === 0 && postingsLoaded && categoriesLoaded">
 		  <div class="item item-text-wrap assertive">
 		    <div ng-if="searchArgument">Não há decorações com o título "{{searchArgument}}"</div>
 		     <div ng-if="!searchArgument">Não há nenhuma decoração!</div>
 		  </div>
 		</div>
+		<div class="spinner" ng-if="!postingsLoaded || !categoriesLoaded">
+	       <ion-spinner icon="android"></ion-spinner>
+	    </div>
 	</ion-content>
 </ion-view>

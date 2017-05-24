@@ -69,17 +69,21 @@ app.controller("decoracoesCtrl", function($state, $http, $scope, bPostings, bCat
 	$scope.favourites = [];
 	$scope.categories = [];
 
+	$scope.postingsLoaded = false;
+	$scope.categoriesLoaded = false;
+
 
 	$scope.loadPostings = function() {
 
 		bPostings.list(50, function(data) {
-			console.log("postings length:  " + data.length);
 			$scope.fullPostings = data;
 			$scope.postings = $scope.fullPostings;
+			$scope.postingsLoaded = true;
 		});
 
 		bCategories.list(function(data) {
 			$scope.categories = $scope.categories.concat(data);
+			$scope.categoriesLoaded = true;
 		});
 	}
 
