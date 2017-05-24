@@ -71,6 +71,8 @@ app.controller("decoracoesCtrl", function($state, $http, $scope, bPostings, bCat
 
 	$scope.postingsLoaded = false;
 	$scope.categoriesLoaded = false;
+	$scope.errorLoadingPostings = false;
+	$scope.errorLoadingCategories = false;
 
 
 	$scope.loadPostings = function() {
@@ -79,11 +81,15 @@ app.controller("decoracoesCtrl", function($state, $http, $scope, bPostings, bCat
 			$scope.fullPostings = data;
 			$scope.postings = $scope.fullPostings;
 			$scope.postingsLoaded = true;
+		}, function() {
+			$scope.errorLoadingPostings = true;
 		});
 
 		bCategories.list(function(data) {
 			$scope.categories = $scope.categories.concat(data);
 			$scope.categoriesLoaded = true;
+		}, function() {
+			$scope.errorLoadingCategories = true;
 		});
 	}
 

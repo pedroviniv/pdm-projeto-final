@@ -20,14 +20,24 @@
 				</a>
 			</div>
 		</div>
+
 		<div class="card" ng-if="postings.length === 0 && postingsLoaded && categoriesLoaded">
 		  <div class="item item-text-wrap assertive">
 		    <div ng-if="searchArgument">Não há decorações com o título "{{searchArgument}}"</div>
 		     <div ng-if="!searchArgument">Não há nenhuma decoração!</div>
 		  </div>
 		</div>
-		<div class="spinner" ng-if="!postingsLoaded || !categoriesLoaded">
+
+		<div class="spinner" ng-if="(!postingsLoaded || 
+			!categoriesLoaded) && (!errorLoadingPostings && !errorLoadingCategories)">
 	       <ion-spinner icon="android"></ion-spinner>
 	    </div>
+
+	    <div class="card" ng-if="errorLoadingPostings || errorLoadingCategories">
+		  <div class="item item-text-wrap assertive">
+		    <div>Falha ao se comunicar com servidor</div>
+		  </div>
+		</div>
+
 	</ion-content>
 </ion-view>

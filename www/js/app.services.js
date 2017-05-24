@@ -4,20 +4,25 @@ app.service('bCategories', function($http) {
 	var baseUrl = 'http://1v00r02n.service.ag-simplesebellas.appspot.com/query/nozip';
 	var categoriesResource = '/categories';
 
-	this.list = function(successCallback) {
-		requestCategories(function(data) {
-			successCallback(data);
-		});
+	this.list = function(successCallback, errorCallback) {
+		requestCategories(
+			function(data) {
+				successCallback(data);
+			}, 
+			function(result) {
+				errorCallback();
+			}
+		);
 	}
 
-	function requestCategories(callback) {
+	function requestCategories(callback, errorCallback) {
 		var full = baseUrl + categoriesResource;
 		console.log("URL: " + full);
 		$http.get(full).then(function(result) {
 			callback(result.data);
 		},
 		function(result) {
-			return null;
+			errorCallback();
 		});
 	}
 });
@@ -28,7 +33,7 @@ app.service('bPostings', function($http) {
 	var postingsResource = '/postings/';
 	var itemsPerRequest = 20;
 
-	this.list = function(limit, successCallback) {
+	this.list = function(limit, successCallback, errorCallback) {
 
 		var result = [];
 		var size = Math.ceil(limit/itemsPerRequest);
@@ -51,21 +56,22 @@ app.service('bPostings', function($http) {
 						itemsLeftQty = limit - offset;
 					}
 					result = result.concat(data.slice(0,itemsLeftQty));
-				}
+				},
+				failingCallback: errorCallback
 			});
 		}
 
 		venqueuer.trigger("postingsRequests");
 	}
 
-	function requestPostings(offset, callback) {
+	function requestPostings(offset, callback, failingCallback) {
 		var full = baseUrl + postingsResource + offset;
 		console.log("URL: " + full);
 		$http.get(full).then(function(result) {
 			callback(result.data);
 		},
 		function(result) {
-			return null;
+			failingCallback();
 		});
 	}
 
