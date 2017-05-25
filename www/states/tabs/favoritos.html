@@ -5,7 +5,7 @@
 			   	<small>{{favourites.length}} decorações favoritas</small>
 			</div>
 			<a class="item item-thumbnail-left" on-tap="open(p)" ng-repeat="p in favourites">
-			    <img src="{{p.path}}">
+			    <img ng-src="{{p.path}}">
 			    <h2>{{p.title}}</h2>
 			    <p>{{p.description}}</p>
 			</a>

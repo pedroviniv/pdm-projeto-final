@@ -14,7 +14,7 @@
 				</div>
 				<a class="item item-thumbnail-left" on-tap="open(p)" 
 				ng-repeat="p in getPostingsByCategory(c.reference)">
-				   <img src="{{p.path}}">
+				   <img ng-src="{{p.path}}">
 				   <h2>{{p.title}}</h2>
 				   <p>{{p.description}}</p>
 				</a>
