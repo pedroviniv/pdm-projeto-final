@@ -28,6 +28,14 @@
 	border: none !important;
 }
 
+.ion-android-arrow-back.button-icon {
+  padding: 1.3px 6px !important;
+}
+
+.platform-android .bar .title {
+  line-height: 42px;
+}
+
 /* SPINNER */
 
 div.spinner {

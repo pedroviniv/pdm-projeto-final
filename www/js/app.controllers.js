@@ -1,6 +1,6 @@
 var app = angular.module("controllers", ['bellasharing.services']);
 
-app.controller("decorationDetailCtrl", function($state, $scope, bStorage, $window) {
+app.controller("decorationDetailCtrl", function($state, $scope, bStorage, $window, $ionicHistory) {
 	
 	$scope.selected = {};
 
@@ -8,8 +8,9 @@ app.controller("decorationDetailCtrl", function($state, $scope, bStorage, $windo
 		$scope.selected = $state.params.selected;
 	}
 
-	$scope.goHome = function() {
-		$state.go('home.decoracoes');
+	$scope.goBack = function() {
+		// $state.go('home.decoracoes');
+		$ionicHistory.backView().go();
 	}
 
 	$scope.html = function(textHtml) {
